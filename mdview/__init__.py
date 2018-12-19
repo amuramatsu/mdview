@@ -1,5 +1,6 @@
 import argparse
 import os.path
+import sys
 import logging
 import random
 import time
@@ -8,10 +9,17 @@ import markdown
 
 from flask import Flask, Markup, render_template, Response
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 #app = Flask(__name__)
 app = Flask('mdview')
+
+if sys.version_info[0] < 3:
+    PY2 = True
+    PY3 = False
+else:
+    PY2 = False
+    PY3 = True
 
 @app.route('/')
 def index():
@@ -26,10 +34,12 @@ def index():
     else:
         html = markdown.markdown(source)
 
-    return render_template('base.html', html=Markup(html),
-                           title=app.config['filename'].decode('utf-8'),
-                           mtime=mtime
-                           )
+    if PY2:
+        title=app.config['filename'].decode('utf-8')
+    else:
+        title=app.config['filename']
+    return render_template('base.html', html=Markup(html), title=title,
+                           mtime=mtime)
 
 class ServerSentEvent(object):
     """Helper class for Server-Sent Events
