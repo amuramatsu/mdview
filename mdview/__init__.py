@@ -7,7 +7,7 @@ import time
 import webbrowser
 import markdown
 
-from flask import Flask, Markup, render_template, Response
+from flask import Flask, Markup, render_template, Response, send_from_directory
 
 __version__ = '0.0.2'
 
@@ -20,6 +20,12 @@ if sys.version_info[0] < 3:
 else:
     PY2 = False
     PY3 = True
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(
+        os.path.join(app.root_path, 'static'),
+        'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/')
 def index():

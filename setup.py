@@ -34,7 +34,7 @@ setup(
         ]
     },
     long_description=read('README.rst'),
-    package_data={'mdview': ['static/*.js', 'static/*.css', 'templates/*.html']},
+    package_data={'mdview': ['static/*.js', 'static/*.css', 'static/*.ico', 'templates/*.html']},
     install_requires = ['markdown', 'flask', 'Pygments'],
 
     classifiers = [
