@@ -7,9 +7,9 @@ Simple markdown viewer inspired by `restview`_.
 
 Features:
 
-  * Support for different markdown flavors (such as markdown-extra).
-  * Auto-reload in browser when previewed file is modified.
-  * Syntax highlighting using `Pygments`_.
+* Support for different markdown flavors (such as markdown-extra).
+* Auto-reload in browser when previewed file is modified.
+* Syntax highlighting using `Pygments`_.
 
 .. _`Pygments`: http://pygments.org/
 
@@ -51,7 +51,7 @@ List of supported flavors is available in `python-markdown`_'s
 documentation. By default the ``extra`` and ``codehilite`` extensions
 are turned on.
 
-.. _`python-markdown`: http://pythonhosted.org/Markdown/extensions/index.html#officially-supported-extensions
+.. _`python-markdown`: https://python-markdown.github.io/extensions/#officially-supported-extensions
 
 How can I run ``mdview`` without any extension?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +67,8 @@ send to it information. You can safely ignore this.
 
 Authors
 =======
-* Author: `Guy Rutenberg`_
-
+* Original Author: `Guy Rutenberg`_
+* Modified by `MURAMATSU Atsushi`_
+  
 .. _`Guy Rutenberg`: http://www.guyrutenberg.com
-
+.. _`MURAMATSU Atsushi`: https://github.com/amuramatsu/
